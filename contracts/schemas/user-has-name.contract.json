@@ -1,0 +1,21 @@
+{
+  "name": "User has Name",
+  "request": {
+    "method": "GET",
+    "path": "/users"
+  },
+  "response": {
+    "status": 200,
+    "bodySchema": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {"type": "string"}
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+}

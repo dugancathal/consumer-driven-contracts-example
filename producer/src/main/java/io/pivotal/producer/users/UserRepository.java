@@ -4,11 +4,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static java.util.Collections.emptyList;
+import static java.util.Arrays.asList;
 
 @Repository
 public class UserRepository {
     public List<User> getAll() {
-        return emptyList();
+        return asList(
+            new User("4")
+        );
     }
 }
