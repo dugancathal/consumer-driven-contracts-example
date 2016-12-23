@@ -24,7 +24,7 @@ public class UsersControllerTest {
     @Before
     public void setUp() throws Exception {
         when(mockRepository.getAll()).thenReturn(asList(
-            new User("4")
+            new User("4", "name")
         ));
         mvc = standaloneSetup(new UsersController(mockRepository)).build();
     }
@@ -33,6 +33,7 @@ public class UsersControllerTest {
     public void testControllerIndexReturnsListOfUsers() throws Exception {
         mvc.perform(get("/users"))
             .andExpect(status().is(200))
-            .andExpect(jsonPath("[0]id").exists());
+            .andExpect(jsonPath("[0]id").exists())
+            .andExpect(jsonPath("[0]name").exists());
     }
 }

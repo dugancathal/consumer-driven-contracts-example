@@ -10,7 +10,7 @@ import static java.util.Arrays.asList;
 public class UserRepository {
     public List<User> getAll() {
         return asList(
-            new User("4")
+            new User("4", "Bertha Jones")
         );
     }
 }
