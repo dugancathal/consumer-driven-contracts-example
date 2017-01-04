@@ -1,5 +1,5 @@
 {
-  "name": "User has Name",
+  "title": "User has Name",
   "request": {
     "method": "GET",
     "path": "/users"
@@ -15,11 +15,13 @@
         "type": "object",
         "properties": {
           "id": {"type": "string"},
-          "name": {"type": "string"}
+          "name": {"type": "string"},
+          "newField": {"type": "number"}
         },
         "required": [
           "id",
-          "name"
+          "name",
+          "newField"
         ]
       }
     }
