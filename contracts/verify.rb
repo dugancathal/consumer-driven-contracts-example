@@ -20,4 +20,5 @@ if errors_by_file.values.all?(&:empty?)
 else
   puts "Failure:"
   pp Hash[errors_by_file.select {|_,v| v.any? }]
+  exit 1
 end
