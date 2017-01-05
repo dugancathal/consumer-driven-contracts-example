@@ -21,8 +21,14 @@ In the contract "repo", we've included two scripts: [fakeout.rb](contracts/fakeo
 ```
 cd contracts && bundle install
 cd ../producer && ./gradlew build
-cd ../consumer && ./gradlew build
+cd ../consumer && ./gradlew build # Note that this command should fail on tests
 ```
+
+## The Contracts
+
+The producer is a Spring Boot API that exposes an endpoint for retrieving all users in the system. The consumer (also a Spring Boot API) needs this endpoint to do its job. In the contracts directory, there is a contract under the "schemas" folder at [schemas/users/GET.contract.json](contracts/schemas/users/GET.contract.json).
+
+The consumer currently has one acceptance test that expects a service to be running on localhost:8081 which exposes the same interface as the producer (may be the producer, may not).
 
 ### Verification
 
